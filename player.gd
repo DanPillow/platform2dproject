@@ -7,7 +7,7 @@ var gravity : float=500.0
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y +=gravity*delta
-		
+	
 	velocity.x=0
 	
 	if Input.is_key_pressed(KEY_LEFT):
