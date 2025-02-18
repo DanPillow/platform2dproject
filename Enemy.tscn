@@ -11,11 +11,10 @@ script = ExtResource("1_3hti2")
 move_dir = Vector2(0, -50)
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(49, -19)
 texture = ExtResource("2_yukvk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(49, -20)
+position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_87bfx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

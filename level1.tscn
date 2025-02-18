@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://b615yyeslh3dk"]
+[gd_scene load_steps=6 format=4 uid="uid://b615yyeslh3dk"]
 
 [ext_resource type="TileSet" uid="uid://ciyh6cinwo16j" path="res://new_tile_set.tres" id="1_adrjc"]
 [ext_resource type="Texture2D" uid="uid://2k3iywmsqila" path="res://Sprites/Characters/character_0001.png" id="2_0d58k"]
 [ext_resource type="Script" path="res://player.gd" id="2_m3krl"]
-[ext_resource type="Script" path="res://enemy.gd" id="4_53vw3"]
 [ext_resource type="PackedScene" uid="uid://csvcfbdb7pvpp" path="res://Enemy.tscn" id="4_e8o35"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8mj78"]
@@ -31,9 +30,8 @@ shape = SubResource("CapsuleShape2D_8mj78")
 zoom = Vector2(3, 3)
 
 [node name="Enemy" parent="." instance=ExtResource("4_e8o35")]
-script = ExtResource("4_53vw3")
+position = Vector2(52, -8)
 
 [node name="Enemy2" parent="." instance=ExtResource("4_e8o35")]
-position = Vector2(114, -29)
-script = ExtResource("4_53vw3")
+position = Vector2(163, -45)
 move_dir = Vector2(30, 0)
