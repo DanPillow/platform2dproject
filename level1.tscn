@@ -31,6 +31,7 @@ zoom = Vector2(3, 3)
 
 [node name="Enemy" parent="." instance=ExtResource("4_e8o35")]
 position = Vector2(52, -8)
+move_dir = Vector2(0, -50)
 
 [node name="Enemy2" parent="." instance=ExtResource("4_e8o35")]
 position = Vector2(163, -45)
