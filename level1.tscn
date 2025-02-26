@@ -1,17 +1,20 @@
-[gd_scene load_steps=9 format=4 uid="uid://b615yyeslh3dk"]
+[gd_scene load_steps=10 format=4 uid="uid://b615yyeslh3dk"]
 
 [ext_resource type="TileSet" uid="uid://ciyh6cinwo16j" path="res://new_tile_set.tres" id="1_adrjc"]
 [ext_resource type="Texture2D" uid="uid://2k3iywmsqila" path="res://Sprites/Characters/character_0001.png" id="2_0d58k"]
 [ext_resource type="Script" path="res://player.gd" id="2_m3krl"]
 [ext_resource type="PackedScene" uid="uid://csvcfbdb7pvpp" path="res://Enemy.tscn" id="4_e8o35"]
-[ext_resource type="Texture2D" uid="uid://bj4phc7ceh37p" path="res://Sprites/Objects/tile_0068.png" id="5_44vyq"]
-[ext_resource type="Script" path="res://Spikes.gd" id="6_6bblt"]
+[ext_resource type="PackedScene" uid="uid://b7c1v2fjtqb7j" path="res://spikes.tscn" id="5_fg726"]
+[ext_resource type="PackedScene" uid="uid://cwsytgny1s1kx" path="res://coin.tscn" id="6_ymbht"]
+[ext_resource type="PackedScene" uid="uid://dnymxm2ahjl3g" path="res://End_Flag.tscn" id="7_hlotq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8mj78"]
 height = 28.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjjuf"]
-size = Vector2(18, 9)
+[sub_resource type="LabelSettings" id="LabelSettings_pevwv"]
+font_size = 48
+outline_size = 5
+outline_color = Color(0.011597, 0.00418877, 0, 1)
 
 [node name="Main" type="Node2D"]
 
@@ -34,6 +37,15 @@ shape = SubResource("CapsuleShape2D_8mj78")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
+
+[node name="ScoreText" type="Label" parent="Player/CanvasLayer"]
+custom_minimum_size = Vector2(25, 25)
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_pevwv")
+
 [node name="Enemy" parent="." instance=ExtResource("4_e8o35")]
 position = Vector2(52, -8)
 move_dir = Vector2(0, -50)
@@ -42,16 +54,13 @@ move_dir = Vector2(0, -50)
 position = Vector2(163, -45)
 move_dir = Vector2(30, 0)
 
-[node name="Spikes" type="Area2D" parent="."]
-script = ExtResource("6_6bblt")
+[node name="Spikes" parent="." instance=ExtResource("5_fg726")]
+position = Vector2(247, -18)
 
-[node name="Sprite" type="Sprite2D" parent="Spikes"]
-position = Vector2(96, -44.5)
-scale = Vector2(1, 0.944444)
-texture = ExtResource("5_44vyq")
+[node name="Coin" parent="." instance=ExtResource("6_ymbht")]
+position = Vector2(1, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes"]
-position = Vector2(96, -40.5)
-shape = SubResource("RectangleShape2D_bjjuf")
+[node name="Coin2" parent="." instance=ExtResource("6_ymbht")]
+position = Vector2(119, -33)
 
-[connection signal="body_entered" from="Spikes" to="Spikes" method="_on_body_entered"]
+[node name="EndFlag" parent="." instance=ExtResource("7_hlotq")]
