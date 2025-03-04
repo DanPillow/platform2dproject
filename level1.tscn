@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://ciyh6cinwo16j" path="res://new_tile_set.tres" id="1_adrjc"]
 [ext_resource type="Texture2D" uid="uid://2k3iywmsqila" path="res://Sprites/Characters/character_0001.png" id="2_0d58k"]
-[ext_resource type="Script" path="res://player.gd" id="2_m3krl"]
+[ext_resource type="Script" uid="uid://bk6etii3wlfuk" path="res://player.gd" id="2_m3krl"]
 [ext_resource type="PackedScene" uid="uid://csvcfbdb7pvpp" path="res://Enemy.tscn" id="4_e8o35"]
 [ext_resource type="PackedScene" uid="uid://b7c1v2fjtqb7j" path="res://spikes.tscn" id="5_fg726"]
 [ext_resource type="PackedScene" uid="uid://cwsytgny1s1kx" path="res://coin.tscn" id="6_ymbht"]

@@ -1,0 +1,108 @@
+[gd_scene load_steps=7 format=3 uid="uid://berd4qu8txwn3"]
+
+[ext_resource type="Texture2D" uid="uid://chfyrs0wjm8nf" path="res://Menu Image.jpg" id="1_8kl8r"]
+[ext_resource type="Script" uid="uid://dmj2dg0l4tfgo" path="res://main_menu.gd" id="1_sh3mg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_riaan"]
+texture = ExtResource("1_8kl8r")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vt2iu"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_maoc6"]
+bg_color = Color(0.707967, 0.707967, 0.707967, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7kds"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sh3mg")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_riaan")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -99.0
+offset_right = 210.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_vt2iu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_maoc6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vt2iu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r7kds")
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_vt2iu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_maoc6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vt2iu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r7kds")
+text = "Options"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_vt2iu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_maoc6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vt2iu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r7kds")
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.264
+anchor_right = 0.5
+anchor_bottom = 0.264
+offset_left = -63.0
+offset_top = 0.927994
+offset_right = 70.0
+offset_bottom = 23.928
+grow_horizontal = 2
+grow_vertical = 2
+text = "Godot Adventure"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="on_exit_pressed"]
