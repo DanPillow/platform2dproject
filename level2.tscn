@@ -1,17 +1,13 @@
-[gd_scene load_steps=10 format=4 uid="uid://b615yyeslh3dk"]
+[gd_scene load_steps=6 format=4 uid="uid://bb7l0vx03w74s"]
 
-[ext_resource type="TileSet" uid="uid://ciyh6cinwo16j" path="res://new_tile_set.tres" id="1_adrjc"]
-[ext_resource type="Texture2D" uid="uid://2k3iywmsqila" path="res://Sprites/Characters/character_0001.png" id="2_0d58k"]
-[ext_resource type="Script" uid="uid://bk6etii3wlfuk" path="res://player.gd" id="2_m3krl"]
-[ext_resource type="PackedScene" uid="uid://csvcfbdb7pvpp" path="res://Enemy.tscn" id="4_e8o35"]
-[ext_resource type="PackedScene" uid="uid://b7c1v2fjtqb7j" path="res://spikes.tscn" id="5_fg726"]
-[ext_resource type="PackedScene" uid="uid://cwsytgny1s1kx" path="res://coin.tscn" id="6_ymbht"]
-[ext_resource type="PackedScene" uid="uid://dnymxm2ahjl3g" path="res://End_Flag.tscn" id="7_hlotq"]
+[ext_resource type="TileSet" uid="uid://ciyh6cinwo16j" path="res://new_tile_set.tres" id="1_6q4t8"]
+[ext_resource type="Script" uid="uid://bk6etii3wlfuk" path="res://player.gd" id="2_8tcn8"]
+[ext_resource type="Texture2D" uid="uid://2k3iywmsqila" path="res://Sprites/Characters/character_0001.png" id="3_r6vdu"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8mj78"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_21xmu"]
 height = 28.0
 
-[sub_resource type="LabelSettings" id="LabelSettings_pevwv"]
+[sub_resource type="LabelSettings" id="LabelSettings_8i3m3"]
 font_size = 48
 outline_size = 5
 outline_color = Color(0.011597, 0.00418877, 0, 1)
@@ -21,18 +17,18 @@ outline_color = Color(0.011597, 0.00418877, 0, 1)
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(1, 21)
 tile_map_data = PackedByteArray("AAD9////AAABAAEAAAD+////AAACAAEAAAD/////AAACAAEAAAAAAP//AAACAAEAAAABAP//AAACAAEAAAACAP//AAACAAEAAAADAP//AAACAAEAAAAEAP3/AAACAAEAAAAFAP3/AAACAAEAAAAJAP3/AAACAAEAAAAKAP3/AAACAAEAAAD9/wAAAAABAAYAAAALAP7/AAADAAYAAAALAP//AAADAAYAAAALAP3/AAADAAEAAAAHAP7/AAACAAEAAAAIAP7/AAACAAEAAAAGAP7/AAACAAEAAAAQAPz/AAACAAEAAAARAPz/AAACAAEAAAAPAPz/AAABAAEAAAASAPz/AAACAAEAAAARAPr/AAARAAUAAAARAPv/AAARAAUAAAARAPn/AAARAAQAAAAQAPn/AAARAAIAAAASAPn/AAATAAIAAAAQAPj/AAARAAEAAAARAPj/AAASAAEAAAASAPj/AAATAAEAAAAQAPf/AAARAAAAAAARAPf/AAASAAAAAAASAPf/AAATAAAAAAAEAP7/AAACAAYAAAAFAP7/AAACAAYAAAAEAP//AAACAAYAAAAFAP//AAACAAYAAAAHAP//AAACAAYAAAAGAP//AAACAAYAAAAIAP//AAACAAYAAAD+/wAAAAACAAYAAAD//wAAAAACAAYAAAAAAAAAAAACAAYAAAABAAAAAAACAAYAAAACAAAAAAACAAYAAAADAAAAAAACAAYAAAAEAAAAAAACAAYAAAAFAAAAAAACAAYAAAAGAAAAAAACAAYAAAAHAAAAAAACAAYAAAAIAAAAAAACAAYAAAAJAAAAAAACAAYAAAAKAAAAAAACAAYAAAALAAAAAAADAAYAAAAJAP7/AAACAAYAAAAJAP//AAACAAYAAAAKAP7/AAACAAYAAAAKAP//AAACAAYAAAD+/wEAAAACAAcAAAD//wEAAAACAAcAAAAAAAEAAAACAAcAAAABAAEAAAACAAcAAAACAAEAAAACAAcAAAADAAEAAAACAAcAAAAEAAEAAAACAAcAAAAFAAEAAAACAAcAAAAGAAEAAAACAAcAAAAHAAEAAAACAAcAAAAIAAEAAAACAAcAAAAJAAEAAAACAAcAAAAKAAEAAAACAAcAAAALAAEAAAADAAcAAAAVAP//AAABAAYAAAAWAP//AAACAAYAAAAXAP//AAACAAYAAAAYAP//AAACAAYAAAAaAP//AAACAAYAAAAbAP//AAACAAYAAAAcAP//AAACAAYAAAAdAP//AAACAAYAAAAVAP7/AAABAAEAAAAWAP7/AAACAAEAAAAXAP7/AAACAAEAAAAYAP7/AAACAAEAAAAZAP7/AAACAAEAAAAaAP7/AAACAAEAAAAbAP7/AAACAAEAAAAcAP7/AAACAAEAAAAdAP7/AAACAAEAAAAeAP7/AAADAAEAAAAhAPz/AAABAAEAAAAiAPz/AAACAAEAAAAjAPz/AAACAAEAAAAkAPz/AAACAAEAAAAlAPz/AAACAAEAAAAmAPz/AAADAAEAAAAhAP3/AAABAAYAAAAiAP3/AAACAAYAAAAhAP7/AAABAAcAAAAiAP7/AAACAAcAAAAjAP3/AAACAAYAAAAjAP7/AAACAAcAAAAlAP3/AAACAAYAAAAlAP7/AAACAAcAAAAkAP3/AAACAAYAAAAkAP7/AAACAAcAAAAmAP3/AAADAAYAAAAmAP7/AAADAAcAAAAZAP//AAACAAYAAAAeAP//AAACAAYAAAA=")
-tile_set = ExtResource("1_adrjc")
+tile_set = ExtResource("1_6q4t8")
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["Player"]]
-script = ExtResource("2_m3krl")
+script = ExtResource("2_8tcn8")
 
 [node name="Sprite" type="Sprite2D" parent="Player"]
 position = Vector2(0, -12)
-texture = ExtResource("2_0d58k")
+texture = ExtResource("3_r6vdu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, -14)
-shape = SubResource("CapsuleShape2D_8mj78")
+shape = SubResource("CapsuleShape2D_21xmu")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
@@ -44,43 +40,4 @@ custom_minimum_size = Vector2(25, 25)
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Score: 0"
-label_settings = SubResource("LabelSettings_pevwv")
-
-[node name="Enemy" parent="." instance=ExtResource("4_e8o35")]
-position = Vector2(64, -7)
-move_dir = Vector2(-50, 0)
-
-[node name="Enemy2" parent="." instance=ExtResource("4_e8o35")]
-position = Vector2(163, -45)
-move_dir = Vector2(50, 0)
-
-[node name="Spikes" parent="." instance=ExtResource("5_fg726")]
-position = Vector2(118, -16)
-
-[node name="Coin" parent="." instance=ExtResource("6_ymbht")]
-position = Vector2(9, 2)
-
-[node name="Coin2" parent="." instance=ExtResource("6_ymbht")]
-position = Vector2(119, -33)
-
-[node name="EndFlag" parent="." instance=ExtResource("7_hlotq")]
-position = Vector2(674, -58)
-next_scene = "uid://bb7l0vx03w74s"
-
-[node name="Spikes2" parent="." instance=ExtResource("5_fg726")]
-position = Vector2(136, -16)
-
-[node name="Spikes3" parent="." instance=ExtResource("5_fg726")]
-position = Vector2(154, -16)
-
-[node name="Enemy3" parent="." instance=ExtResource("4_e8o35")]
-position = Vector2(280, -65)
-move_dir = Vector2(45, 0)
-
-[node name="Enemy4" parent="." instance=ExtResource("4_e8o35")]
-position = Vector2(462, -22)
-move_dir = Vector2(60, 0)
-
-[node name="Enemy5" parent="." instance=ExtResource("4_e8o35")]
-position = Vector2(367, -43)
-move_dir = Vector2(0, -50)
+label_settings = SubResource("LabelSettings_8i3m3")
